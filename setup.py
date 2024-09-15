@@ -4,7 +4,7 @@ package_name = "square_file_store_helper"
 
 setup(
     name=package_name,
-    version="1.0.0",
+    version="1.0.1",
     packages=find_packages(),
     install_requires=["requests>=2.31.0", "kiss_headers>=2.4.3"],
     author="thePmSquare",
