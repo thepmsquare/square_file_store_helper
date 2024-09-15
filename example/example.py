@@ -10,7 +10,7 @@ output_folder_path = os.path.dirname(os.path.abspath(__file__)) + os.sep + "outp
 # Example: Upload File using file path
 upload_file_using_path_output = square_file_store_helper.upload_file_using_file_path(
     file_path=input_file_path,
-    file_purpose=None,
+    app_id=None,
     system_relative_path="others/misc",
 )
 print(upload_file_using_path_output)
@@ -19,7 +19,7 @@ print(upload_file_using_path_output)
 with open(input_file_path, "rb") as file:
     upload_file_using_io_output = square_file_store_helper.upload_file_using_binary_io(
         file=file,
-        file_purpose=None,
+        app_id=None,
         system_relative_path="others/misc",
     )
 print(upload_file_using_io_output)
