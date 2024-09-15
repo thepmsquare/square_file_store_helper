@@ -24,13 +24,13 @@ class SquareFileStoreHelper:
     def upload_file_using_file_path(
             self,
             file_path: str,
-            file_purpose: str | None = None,
+            app_id: int | None = None,
             system_relative_path: str = "others/misc",
     ):
         try:
             endpoint = "upload_file"
             payload = {
-                "file_purpose": file_purpose,
+                "app_id": app_id,
                 "system_relative_pat": system_relative_path,
             }
             with open(file_path, "rb") as file:
@@ -50,13 +50,13 @@ class SquareFileStoreHelper:
     def upload_file_using_binary_io(
             self,
             file: BinaryIO,
-            file_purpose: str | None = None,
+            app_id: int | None = None,
             system_relative_path: str = "others/misc",
     ):
         try:
             endpoint = "upload_file"
             payload = {
-                "file_purpose": file_purpose,
+                "app_id": app_id,
                 "system_relative_path": system_relative_path,
             }
 
