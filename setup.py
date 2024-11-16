@@ -4,9 +4,12 @@ package_name = "square_file_store_helper"
 
 setup(
     name=package_name,
-    version="1.0.1",
+    version="2.0.0",
     packages=find_packages(),
-    install_requires=["requests>=2.31.0", "kiss_headers>=2.4.3"],
+    install_requires=[
+        "requests>=2.31.0",
+        "kiss_headers>=2.4.3",
+    ],
     author="thePmSquare",
     author_email="thepmsquare@gmail.com",
     description="helper to access the file store layer for my personal server.",

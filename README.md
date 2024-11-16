@@ -20,6 +20,11 @@ pip install square_file_store_helper
 
 ## changelog
 
+### v2.0.0
+
+- add versions to api endpoints.
+- standard output format.
+
 ### v1.0.1
 
 - replace file_purpose with app_id.
