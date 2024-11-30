@@ -4,11 +4,12 @@ package_name = "square_file_store_helper"
 
 setup(
     name=package_name,
-    version="2.0.0",
+    version="2.1.0",
     packages=find_packages(),
     install_requires=[
         "requests>=2.31.0",
         "kiss_headers>=2.4.3",
+        "square_commons>=1.3.0",
     ],
     author="thePmSquare",
     author_email="thepmsquare@gmail.com",

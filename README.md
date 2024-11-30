@@ -20,6 +20,10 @@ pip install square_file_store_helper
 
 ## changelog
 
+### v2.1.0
+
+- use make_request_json_output from square_commons to make requests.
+
 ### v2.0.0
 
 - add versions to api endpoints.

@@ -4,6 +4,7 @@ from typing import BinaryIO
 
 import requests
 from kiss_headers import parse_it
+from square_commons.api_utils import make_request_json_output
 
 
 class SquareFileStoreHelper:
@@ -29,21 +30,20 @@ class SquareFileStoreHelper:
     ):
         try:
             endpoint = "upload_file/v0"
-            payload = {
+            data = {
                 "app_id": app_id,
                 "system_relative_path": system_relative_path,
             }
             with open(file_path, "rb") as file:
                 files = {"file": (file_path, file, "multipart/form-data")}
-                response = requests.post(
-                    self.global_str_square_file_store_url_base + "/" + endpoint,
+                response = make_request_json_output(
+                    method="POST",
+                    base_url=self.global_str_square_file_store_url_base,
+                    endpoint=endpoint,
+                    data=data,
                     files=files,
-                    data=payload,
                 )
-                if response.status_code == 201:
-                    return response.json()
-                else:
-                    response.raise_for_status()
+            return response
         except Exception:
             raise
 
@@ -55,23 +55,20 @@ class SquareFileStoreHelper:
     ):
         try:
             endpoint = "upload_file/v0"
-            payload = {
+            data = {
                 "app_id": app_id,
                 "system_relative_path": system_relative_path,
             }
 
             files = {"file": (file.name, file, "multipart/form-data")}
-            response = requests.post(
-                self.global_str_square_file_store_url_base + "/" + endpoint,
+            response = make_request_json_output(
+                method="POST",
+                base_url=self.global_str_square_file_store_url_base,
+                endpoint=endpoint,
+                data=data,
                 files=files,
-                data=payload,
             )
-
-            if response.status_code == 201:
-                return response.json()
-            else:
-                response.raise_for_status()
-
+            return response
         except Exception:
             raise
 
@@ -127,14 +124,12 @@ class SquareFileStoreHelper:
             params = {
                 "file_storage_tokens": list_file_storage_token,
             }
-
-            response = requests.delete(
-                self.global_str_square_file_store_url_base + "/" + endpoint,
+            response = make_request_json_output(
+                method="DELETE",
+                base_url=self.global_str_square_file_store_url_base,
+                endpoint=endpoint,
                 params=params,
             )
-            if response.status_code == 200:
-                return response.json()
-            else:
-                response.raise_for_status()
+            return response
         except Exception:
             raise
