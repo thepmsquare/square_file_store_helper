@@ -9,7 +9,7 @@ setup(
     install_requires=[
         "requests>=2.31.0",
         "kiss_headers>=2.4.3",
-        "square_commons>=1.3.0",
+        "square_commons>=2.0.0",
     ],
     author="thePmSquare",
     author_email="thepmsquare@gmail.com",
