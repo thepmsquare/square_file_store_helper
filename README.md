@@ -20,6 +20,10 @@ pip install square_file_store_helper
 
 ## changelog
 
+### v2.1.2
+
+- bugfix in upload_file_using_file_path_v0 for filename and content type.
+
 ### v2.1.1
 
 - bump square_commons to >=2.0.0.

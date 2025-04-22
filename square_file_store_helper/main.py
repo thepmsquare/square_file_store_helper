@@ -1,3 +1,4 @@
+import mimetypes
 import os
 import urllib.parse
 from typing import BinaryIO
@@ -35,7 +36,11 @@ class SquareFileStoreHelper:
                 "system_relative_path": system_relative_path,
             }
             with open(file_path, "rb") as file:
-                files = {"file": (file_path, file, "multipart/form-data")}
+                filename = os.path.basename(file_path)
+                content_type = (
+                    mimetypes.guess_type(filename)[0] or "application/octet-stream"
+                )
+                files = {"file": (filename, file, content_type)}
                 response = make_request_json_output(
                     method="POST",
                     base_url=self.global_str_square_file_store_url_base,
