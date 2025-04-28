@@ -20,6 +20,11 @@ pip install square_file_store_helper
 
 ## changelog
 
+### v3.0.0
+
+- remove upload_file_using_binary_io_v0 and replace it with upload_file_using_tuple_v0.
+- update example.
+
 ### v2.1.2
 
 - bugfix in upload_file_using_file_path_v0 for filename and content type.

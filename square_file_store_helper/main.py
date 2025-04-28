@@ -1,7 +1,7 @@
 import mimetypes
 import os
 import urllib.parse
-from typing import BinaryIO
+from typing import Tuple, IO
 
 import requests
 from kiss_headers import parse_it
@@ -52,9 +52,9 @@ class SquareFileStoreHelper:
         except Exception:
             raise
 
-    def upload_file_using_binary_io_v0(
+    def upload_file_using_tuple_v0(
         self,
-        file: BinaryIO,
+        file: Tuple[str, IO, str],
         app_id: int | None = None,
         system_relative_path: str = "others/misc",
     ):
@@ -65,7 +65,7 @@ class SquareFileStoreHelper:
                 "system_relative_path": system_relative_path,
             }
 
-            files = {"file": (file.name, file, "multipart/form-data")}
+            files = {"file": file}
             response = make_request_json_output(
                 method="POST",
                 base_url=self.global_str_square_file_store_url_base,

@@ -1,3 +1,4 @@
+import mimetypes
 import os
 
 from square_file_store_helper import SquareFileStoreHelper
@@ -16,13 +17,14 @@ upload_file_using_path_output = square_file_store_helper.upload_file_using_file_
 print(upload_file_using_path_output)
 
 # Example: Upload File using binary io
-with open(input_file_path, "rb") as file:
-    upload_file_using_io_output = (
-        square_file_store_helper.upload_file_using_binary_io_v0(
-            file=file,
-            app_id=None,
-            system_relative_path="others/misc",
-        )
+with open(input_file_path, "rb") as file_binary_io:
+    file_name = os.path.basename(input_file_path)
+    content_type = mimetypes.guess_type(file_name)[0] or "application/octet-stream"
+    file = (file_name, file_binary_io, content_type)
+    upload_file_using_io_output = square_file_store_helper.upload_file_using_tuple_v0(
+        file=file,
+        app_id=None,
+        system_relative_path="others/misc",
     )
 print(upload_file_using_io_output)
 
