@@ -1,5 +1,9 @@
 # changelog
 
+## v3.0.2
+
+- remove setup.py and switch to pyproject.toml
+
 ## v3.0.1
 
 - docs
