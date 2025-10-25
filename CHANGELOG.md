@@ -1,5 +1,10 @@
 # changelog
 
+## v3.0.3
+
+- switch build-system to uv.
+- update pypi publish github action.
+
 ## v3.0.2
 
 - remove setup.py and switch to pyproject.toml
