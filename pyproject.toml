@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "square_file_store_helper"
-version = "3.0.3"
+version = "3.0.4"
 description = "helper to access the file store layer for my personal server."
 readme = "README.md"
 readme-content-type = "text/markdown"
@@ -29,6 +29,20 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Topic :: Utilities",
     "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.optional-dependencies]
+all = [
+    "black>=25.12.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "pytest-mock>=3.15.1",
+]
+dev = [
+    "black>=25.12.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+    "pytest-mock>=3.15.1",
 ]
 
 [tool.uv.build-backend]

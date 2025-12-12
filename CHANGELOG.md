@@ -1,5 +1,11 @@
 # changelog
 
+## v3.0.4
+
+- add unit tests.
+- dependencies
+    - add pytest, pytest-cov, pytest-mock and black to all and dev optional sections.
+
 ## v3.0.3
 
 - switch build-system to uv.
