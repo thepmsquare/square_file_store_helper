@@ -1,6 +1,11 @@
 # changelog
 
-## v3.1.0
+## v3.1.1
+
+- dependencies
+    - update "square_commons>=3.1.0".
+
+## v3.1.0 (unstable)
 
 - migrate from make_request_json_output to make_request from square_commons.
 - Add response pydantic models for all helper methods.
