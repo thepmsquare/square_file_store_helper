@@ -1,5 +1,13 @@
 # changelog
 
+## v3.1.0
+
+- migrate from make_request_json_output to make_request from square_commons.
+- Add response pydantic models for all helper methods.
+- qol: add overload for proper type hints.
+- update test cases.
+- return pydantic models instead of dict in all api helpers if response_as_pydantic=True.
+
 ## v3.0.4
 
 - add unit tests.

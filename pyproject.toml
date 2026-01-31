@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "square_file_store_helper"
-version = "3.0.4"
+version = "3.1.0"
 description = "helper to access the file store layer for my personal server."
 readme = "README.md"
 readme-content-type = "text/markdown"
